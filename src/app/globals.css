@@ -1,0 +1,43 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
+@import "tailwindcss";
+
+:root {
+  --background: #000000;
+  --foreground: #ffffff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Pretendard", sans-serif;
+
+  --animate-spin-slow: spin 4s linear infinite;
+  --animate-shimmer: shimmer 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-marquee: marquee 20s linear infinite;
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(100%);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(calc(-100% - 1rem));
+    }
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
