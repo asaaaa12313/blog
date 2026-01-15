@@ -6,7 +6,7 @@ import Pricing from "@/components/sections/Pricing";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between bg-black text-white">
+    <main className="flex min-h-screen flex-col items-center justify-between overflow-x-hidden">
       <Hero />
       <Problem />
       <Features />

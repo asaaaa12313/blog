@@ -7,28 +7,83 @@ export default function Hero() {
     const words = ["블로그,", "쓰지", "말고", "고르세요."];
 
     return (
-        <section className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden px-4 pt-20">
-            {/* Aurora Background Effect */}
-            <div className="absolute inset-0 z-0 overflow-hidden">
-                <div
-                    className="absolute left-1/2 top-1/2 -z-10 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-600/20 blur-[100px]"
-                />
-                <motion.div
-                    animate={{
-                        scale: [1, 1.2, 1],
-                        opacity: [0.3, 0.5, 0.3],
-                    }}
-                    transition={{
-                        duration: 8,
-                        repeat: Infinity,
-                        ease: "easeInOut",
-                    }}
-                    className="absolute left-1/2 top-1/2 -z-10 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-purple-600/20 blur-[120px]"
-                />
+        <section className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden px-4 pt-20 bg-white">
+            {/* Fluid Wave Background */}
+            <div className="absolute inset-0 z-0 flex items-center justify-center">
+                <div className="absolute w-[200%] h-full opacity-30 blur-3xl">
+                    <motion.div
+                        animate={{
+                            x: ["-25%", "0%"],
+                        }}
+                        transition={{
+                            duration: 20,
+                            repeat: Infinity,
+                            ease: "linear",
+                        }}
+                        className="w-full h-full bg-[conic-gradient(from_0deg_at_50%_50%,#a5b4fc_0deg,transparent_60deg,#c084fc_120deg,transparent_180deg,#86efac_240deg,transparent_300deg,#a5b4fc_360deg)] opacity-60"
+                    />
+                </div>
+
+                {/* Main Wave (SVG Approximation) */}
+                <svg className="absolute w-full h-[600px] opacity-90" viewBox="0 0 1440 600" preserveAspectRatio="none">
+                    <motion.path
+                        d="M0,300 C360,200 720,400 1440,300 L1440,600 L0,600 Z"
+                        fill="url(#gradient)"
+                        initial={{ d: "M0,300 C360,200 720,400 1440,300 L1440,600 L0,600 Z" }}
+                        animate={{
+                            d: [
+                                "M0,300 C360,200 720,400 1440,300 L1440,600 L0,600 Z",
+                                "M0,300 C360,400 720,200 1440,300 L1440,600 L0,600 Z",
+                                "M0,300 C360,200 720,400 1440,300 L1440,600 L0,600 Z"
+                            ]
+                        }}
+                        transition={{
+                            duration: 10,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                        }}
+                    />
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stopColor="#a78bfa" stopOpacity="0.2" /> {/* Light Purple */}
+                            <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.2" /> {/* Blue */}
+                            <stop offset="100%" stopColor="#2dd4bf" stopOpacity="0.2" /> {/* Teal */}
+                        </linearGradient>
+                    </defs>
+                </svg>
+                {/* Second Wave for depth */}
+                <svg className="absolute w-full h-[600px] opacity-70 blur-xl" viewBox="0 0 1440 600" preserveAspectRatio="none">
+                    <motion.path
+                        d="M0,320 C400,280 800,380 1440,320"
+                        fill="none"
+                        stroke="url(#gradient2)"
+                        strokeWidth="40"
+                        initial={{ pathLength: 1, pathOffset: 0 }}
+                        animate={{
+                            d: [
+                                "M0,320 C400,280 800,380 1440,320",
+                                "M0,320 C400,380 800,280 1440,320",
+                                "M0,320 C400,280 800,380 1440,320",
+                            ]
+                        }}
+                        transition={{
+                            duration: 15,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                        }}
+                    />
+                    <defs>
+                        <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stopColor="#c084fc" />
+                            <stop offset="50%" stopColor="#60a5fa" />
+                            <stop offset="100%" stopColor="#34d399" />
+                        </linearGradient>
+                    </defs>
+                </svg>
             </div>
 
             {/* Text Reveal Animation */}
-            <div className="z-10 mb-12 flex flex-wrap justify-center gap-x-3 gap-y-2 text-center md:gap-x-5">
+            <div className="z-10 flex flex-wrap justify-center gap-x-3 gap-y-2 text-center md:gap-x-5">
                 {words.map((word, i) => (
                     <motion.span
                         key={i}
@@ -39,30 +94,12 @@ export default function Hero() {
                             delay: 0.2 + i * 0.15,
                             ease: [0.2, 0.65, 0.3, 0.9],
                         }}
-                        className="text-5xl font-bold leading-tight tracking-tight text-white md:text-7xl lg:text-8xl"
+                        className="text-5xl font-bold leading-tight tracking-tight text-gray-900 md:text-7xl lg:text-8xl"
                     >
                         {word}
                     </motion.span>
                 ))}
             </div>
-
-            {/* iPhone Mockup */}
-            <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 1, ease: "easeOut" }}
-                className="relative z-10 mx-auto aspect-[9/19] w-[280px] rounded-[3rem] border-8 border-neutral-800 bg-neutral-900 shadow-2xl md:w-[320px]"
-            >
-                <div className="absolute inset-0 overflow-hidden rounded-[2.5rem] bg-neutral-950">
-                    <img
-                        src="/hero-phone.png"
-                        alt="Mobile App Interface"
-                        className="h-full w-full object-cover"
-                    />
-                </div>
-                {/* Notch */}
-                <div className="absolute left-1/2 top-0 h-6 w-32 -translate-x-1/2 rounded-b-2xl bg-black" />
-            </motion.div>
         </section>
     );
 }
