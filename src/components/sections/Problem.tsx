@@ -42,9 +42,13 @@ export default function Problem() {
                 className="mb-12 text-center"
             >
                 <h2 className="text-3xl font-bold leading-tight text-white md:text-5xl">
-                    글쓰기 1시간? <br />
+                    글쓰기 <span className="text-blue-500">1시간?</span> <br />
                     <span className="text-neutral-500">사장님에겐 사치입니다.</span>
                 </h2>
+                <p className="mt-4 text-lg text-neutral-400 md:text-xl">
+                    원고 쓰고 사진 찍고, <br className="md:hidden" />
+                    고르고 꾸미기까지.
+                </p>
             </motion.div>
 
             <div className="relative h-32 w-full max-w-2xl overflow-visible">
@@ -68,12 +72,19 @@ export default function Problem() {
                 </svg>
             </div>
 
-            <motion.p
+            <motion.div
                 style={{ opacity: useTransform(scrollYProgress, [0.6, 0.8], [0, 1]) }}
-                className="mt-8 text-center text-lg text-neutral-400"
+                className="mt-12 max-w-2xl text-center"
             >
-                복잡한 고민은 이제 끝났습니다.
-            </motion.p>
+                <p className="mb-4 text-lg font-medium text-neutral-300 md:text-xl">
+                    "열심히 했는데 조회수가 왜 이럴까?"
+                </p>
+                <p className="text-base leading-relaxed text-neutral-500 md:text-lg">
+                    혼자 운영할 때는 변동되는 인기 키워드나<br className="hidden md:block" />
+                    다른 업체가 밀고 있는 키워드를 놓치기 쉽습니다.<br />
+                    <span className="text-red-400">결국 아무리 노력해도 조회수는 0이 됩니다.</span>
+                </p>
+            </motion.div>
         </section>
     );
 }
