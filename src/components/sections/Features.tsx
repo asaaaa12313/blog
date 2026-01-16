@@ -19,7 +19,7 @@ function FeatureCard({ title, description, icon, className, delay = 0 }: Feature
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay, ease: "easeOut" }}
             className={cn(
-                "group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-neutral-900/50 p-8 backdrop-blur-xl transition-all duration-300 hover:border-white/30 hover:bg-neutral-900/80",
+                "group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-neutral-200 bg-white/80 p-8 backdrop-blur-xl transition-all duration-300 hover:border-accent/50 hover:bg-white hover:shadow-lg",
                 className
             )}
         >
@@ -28,12 +28,12 @@ function FeatureCard({ title, description, icon, className, delay = 0 }: Feature
                     {icon}
                 </div>
                 <h3 className="mb-2 text-2xl font-semibold text-foreground">{title}</h3>
-                <p className="text-neutral-400">{description}</p>
+                <p className="text-neutral-600">{description}</p>
             </div>
 
             {/* Decorative Glow on Hover */}
             <div className="absolute -inset-px opacity-0 transition duration-500 group-hover:opacity-100">
-                <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/20 to-amber-500/20 blur-xl" />
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/10 to-amber-500/10 blur-xl" />
             </div>
         </motion.div>
     );

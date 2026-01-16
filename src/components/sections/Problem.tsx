@@ -43,7 +43,7 @@ export default function Problem() {
             >
                 <h2 className="text-3xl font-bold leading-tight text-foreground md:text-5xl">
                     글쓰기 <span className="text-accent">1시간?</span> <br />
-                    <span className="text-neutral-400">사장님에겐 사치입니다.</span>
+                    <span className="text-neutral-600">사장님에겐 사치입니다.</span>
                 </h2>
                 <p className="mt-4 text-lg text-neutral-500 md:text-xl">
                     원고 쓰고 사진 찍고, <br className="md:hidden" />

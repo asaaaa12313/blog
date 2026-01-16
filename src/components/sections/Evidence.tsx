@@ -35,7 +35,7 @@ export default function Evidence() {
         <section className="bg-background py-24 overflow-hidden">
             <div className="mb-12 text-center">
                 <h2 className="text-3xl font-bold text-foreground mb-2">믿을 수 없는 퀄리티</h2>
-                <p className="text-neutral-400">이미 많은 사장님들이 경험하고 있습니다.</p>
+                <p className="text-neutral-600">이미 많은 사장님들이 경험하고 있습니다.</p>
             </div>
 
             <div className="relative flex w-full flex-col overflow-hidden">
@@ -71,18 +71,18 @@ function ReviewCard({ title, desc, author }: { title: string; desc: string; auth
     return (
         <figure className={cn(
             "relative w-64 shrink-0 overflow-hidden rounded-xl border p-4",
-            "border-white/10 bg-neutral-900/50 hover:bg-neutral-900",
+            "border-neutral-200 bg-white hover:border-accent/50 hover:shadow-lg",
             "transition-all duration-300 hover:scale-105"
         )}>
             <div className="flex flex-col gap-2">
-                <div className="h-32 w-full rounded-lg bg-neutral-800 animate-pulse" /> {/* Placeholder for blog image */}
+                <div className="h-32 w-full rounded-lg bg-neutral-100 animate-pulse" /> {/* Placeholder for blog image */}
                 <figcaption className="text-sm font-medium text-foreground">
                     {title}
                 </figcaption>
-                <p className="text-xs text-neutral-400">{desc}</p>
+                <p className="text-xs text-neutral-500">{desc}</p>
                 <div className="mt-2 flex items-center gap-2">
                     <div className="h-5 w-5 rounded-full bg-accent/20" />
-                    <span className="text-xs font-medium text-neutral-500">{author}</span>
+                    <span className="text-xs font-medium text-neutral-600">{author}</span>
                 </div>
             </div>
         </figure>
