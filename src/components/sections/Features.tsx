@@ -57,7 +57,7 @@ export default function Features() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="mt-4 text-lg text-neutral-400"
+                        className="mt-4 text-lg text-slate-900 font-medium"
                     >
                         알아서 분석하고, 쓰고, 올립니다.
                     </motion.p>
