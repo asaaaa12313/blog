@@ -1,8 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-
-
+import { useRef } from "react";
 
 const REVIEWS = [
     {
@@ -127,6 +126,20 @@ const REVIEWS = [
 ];
 
 export default function Evidence() {
+    const scrollRef = useRef<HTMLDivElement>(null);
+
+    const scroll = (direction: "left" | "right") => {
+        if (scrollRef.current) {
+            const { current } = scrollRef;
+            const scrollAmount = 400 + 32; // card width + gap
+            if (direction === "left") {
+                current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+            } else {
+                current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+            }
+        }
+    };
+
     return (
         <section className="bg-slate-50 py-24 overflow-hidden">
             <div className="mb-16 text-center">
@@ -134,20 +147,37 @@ export default function Evidence() {
                 <p className="text-slate-600 text-lg">이미 많은 사장님들이 효과를 경험하고 계십니다.</p>
             </div>
 
-            {/* Marquee Container */}
-            <div className="w-full relative overflow-hidden h-[540px]">
-                <div className="flex w-full overflow-hidden">
-                    {/* Inner - Double the content for smooth loop */}
-                    <div className="flex min-w-full shrink-0 animate-marquee gap-8 px-4 items-start">
-                        {REVIEWS.map((review, i) => (
-                            <ReviewChatCard key={`original-${i}`} {...review} />
-                        ))}
-                    </div>
-                    <div className="flex min-w-full shrink-0 animate-marquee gap-8 px-4 items-start" aria-hidden="true">
-                        {REVIEWS.map((review, i) => (
-                            <ReviewChatCard key={`duplicate-${i}`} {...review} />
-                        ))}
-                    </div>
+            {/* Slider Container */}
+            <div className="relative mx-auto max-w-[1400px] px-4 md:px-12">
+                {/* Left Button */}
+                <button
+                    onClick={() => scroll("left")}
+                    className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-white border border-slate-200 shadow-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 hidden md:flex"
+                    aria-label="Previous reviews"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6" /></svg>
+                </button>
+
+                {/* Right Button */}
+                <button
+                    onClick={() => scroll("right")}
+                    className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full bg-white border border-slate-200 shadow-lg text-slate-600 hover:bg-slate-50 hover:text-slate-900 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 hidden md:flex"
+                    aria-label="Next reviews"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
+                </button>
+
+                {/* Scroll Area */}
+                <div
+                    ref={scrollRef}
+                    className="flex w-full overflow-x-auto gap-8 pb-8 snap-x snap-mandatory scrollbar-hide"
+                    style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+                >
+                    {REVIEWS.map((review, i) => (
+                        <div key={i} className="snap-center shrink-0">
+                            <ReviewChatCard {...review} />
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>
@@ -156,7 +186,7 @@ export default function Evidence() {
 
 function ReviewChatCard({ name, message, reply, highlight, time }: { name: string; message: string; reply: string; highlight: string; time: string }) {
     return (
-        <div className="w-[400px] shrink-0 flex flex-col rounded-[2rem] bg-white p-6 shadow-sm border border-slate-100 h-[520px] justify-between">
+        <div className="w-[340px] md:w-[400px] shrink-0 flex flex-col rounded-[2rem] bg-white p-6 shadow-sm border border-slate-100 h-[520px] justify-between transition-transform duration-300 hover:-translate-y-1">
             {/* Header */}
             <div className="flex items-center gap-2 mb-4 text-slate-500">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></svg>
