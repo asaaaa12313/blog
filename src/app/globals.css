@@ -2,15 +2,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  /* Clean white */
-  --foreground: #171717;
-  /* Neutral 900 */
+  --background: #111111;
+  /* Dark background */
+  --foreground: #ededed;
+  /* Light text */
+  --accent: #FFD700;
+  /* Yellow accent */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
   --font-sans: "Pretendard", sans-serif;
 
   --animate-spin-slow: spin 4s linear infinite;

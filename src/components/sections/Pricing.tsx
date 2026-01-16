@@ -34,17 +34,17 @@ function NumberTicker({ value }: { value: number }) {
 
 export default function Pricing() {
     return (
-        <section className="flex min-h-[60vh] w-full items-center justify-center bg-black px-4 py-24">
+        <section className="flex min-h-[60vh] w-full items-center justify-center bg-background px-4 py-24">
             <div className="relative w-full max-w-sm rounded-[2rem] p-[1px] overflow-hidden">
                 {/* Animated Gradient Border */}
-                <div className="absolute inset-0 -z-10 h-full w-full animate-spin-slow bg-[conic-gradient(from_0deg,transparent_0deg,_#3b82f6_120deg,transparent_180deg,_#8b5cf6_300deg,transparent_360deg)] opacity-70" />
+                <div className="absolute inset-0 -z-10 h-full w-full animate-spin-slow bg-[conic-gradient(from_0deg,transparent_0deg,_#fbbf24_120deg,transparent_180deg,_#d97706_300deg,transparent_360deg)] opacity-70" />
 
                 <div className="relative flex flex-col items-center justify-center rounded-[2rem] bg-neutral-900/90 px-6 py-12 text-center backdrop-blur-xl">
                     <h3 className="mb-2 text-xl font-medium text-neutral-400">
                         Premium Plan
                     </h3>
 
-                    <div className="mb-8 flex items-baseline gap-1 text-white">
+                    <div className="mb-8 flex items-baseline gap-1 text-foreground">
                         <span className="text-5xl font-bold tracking-tight">
                             ₩<NumberTicker value={54000} />
                         </span>
@@ -60,7 +60,7 @@ export default function Pricing() {
                         ].map((feature, i) => (
                             <li key={i} className="flex items-center text-neutral-300">
                                 <svg
-                                    className="mr-2 h-4 w-4 text-blue-500"
+                                    className="mr-2 h-4 w-4 text-accent"
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"
@@ -77,7 +77,7 @@ export default function Pricing() {
                         ))}
                     </ul>
 
-                    <button className="group relative inline-flex h-12 w-full items-center justify-center overflow-hidden rounded-xl bg-blue-600 px-6 font-medium text-white transition-all hover:bg-blue-700 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-slate-900">
+                    <button className="group relative inline-flex h-12 w-full items-center justify-center overflow-hidden rounded-xl bg-accent px-6 font-medium text-black transition-all hover:bg-yellow-400 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2 focus:ring-offset-slate-900">
                         {/* Shimmer Effect */}
                         <div className="absolute inset-0 -translate-x-[100%] group-hover:animate-[shimmer_1.5s_infinite] bg-gradient-to-r from-transparent via-white/30 to-transparent" />
                         <span className="relative z-10 flex items-center gap-2">

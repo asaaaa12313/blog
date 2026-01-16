@@ -24,16 +24,16 @@ function FeatureCard({ title, description, icon, className, delay = 0 }: Feature
             )}
         >
             <div className="z-10">
-                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white backdrop-blur-md group-hover:bg-white/20 transition-colors">
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-accent/10 text-accent backdrop-blur-md group-hover:bg-accent/20 transition-colors">
                     {icon}
                 </div>
-                <h3 className="mb-2 text-2xl font-semibold text-white">{title}</h3>
+                <h3 className="mb-2 text-2xl font-semibold text-foreground">{title}</h3>
                 <p className="text-neutral-400">{description}</p>
             </div>
 
             {/* Decorative Glow on Hover */}
             <div className="absolute -inset-px opacity-0 transition duration-500 group-hover:opacity-100">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-xl" />
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/20 to-amber-500/20 blur-xl" />
             </div>
         </motion.div>
     );
@@ -41,16 +41,16 @@ function FeatureCard({ title, description, icon, className, delay = 0 }: Feature
 
 export default function Features() {
     return (
-        <section className="bg-black px-4 py-24">
+        <section className="bg-background px-4 py-24">
             <div className="mx-auto max-w-6xl">
                 <div className="mb-16 text-center">
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-3xl font-bold text-white md:text-5xl"
+                        className="text-3xl font-bold text-foreground md:text-5xl"
                     >
-                        복잡한 과정은 <span className="text-blue-500">생략</span>하세요.
+                        복잡한 과정은 <span className="text-accent">생략</span>하세요.
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}

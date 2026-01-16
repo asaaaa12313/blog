@@ -7,7 +7,7 @@ export default function Hero() {
     const words = ["블로그,", "쓰지", "말고", "고르세요."];
 
     return (
-        <section className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden px-4 pt-20 bg-white">
+        <section className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden px-4 pt-20 bg-background">
             {/* Fluid Wave Background */}
             <div className="absolute inset-0 z-0 flex items-center justify-center">
                 <div className="absolute w-[200%] h-full opacity-30 blur-3xl">
@@ -20,7 +20,7 @@ export default function Hero() {
                             repeat: Infinity,
                             ease: "linear",
                         }}
-                        className="w-full h-full bg-[conic-gradient(from_0deg_at_50%_50%,#a5b4fc_0deg,transparent_60deg,#c084fc_120deg,transparent_180deg,#86efac_240deg,transparent_300deg,#a5b4fc_360deg)] opacity-60"
+                        className="w-full h-full bg-[conic-gradient(from_0deg_at_50%_50%,#a5b4fc_0deg,transparent_60deg,#fbbf24_120deg,transparent_180deg,#86efac_240deg,transparent_300deg,#a5b4fc_360deg)] opacity-40"
                     />
                 </div>
 
@@ -45,9 +45,9 @@ export default function Hero() {
                     />
                     <defs>
                         <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" stopColor="#a78bfa" stopOpacity="0.2" /> {/* Light Purple */}
-                            <stop offset="50%" stopColor="#3b82f6" stopOpacity="0.2" /> {/* Blue */}
-                            <stop offset="100%" stopColor="#2dd4bf" stopOpacity="0.2" /> {/* Teal */}
+                            <stop offset="0%" stopColor="#a78bfa" stopOpacity="0.1" /> {/* Light Purple */}
+                            <stop offset="50%" stopColor="#fbbf24" stopOpacity="0.1" /> {/* Amber/Yellow */}
+                            <stop offset="100%" stopColor="#2dd4bf" stopOpacity="0.1" /> {/* Teal */}
                         </linearGradient>
                     </defs>
                 </svg>
@@ -75,7 +75,7 @@ export default function Hero() {
                     <defs>
                         <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
                             <stop offset="0%" stopColor="#c084fc" />
-                            <stop offset="50%" stopColor="#60a5fa" />
+                            <stop offset="50%" stopColor="#fbbf24" />
                             <stop offset="100%" stopColor="#34d399" />
                         </linearGradient>
                     </defs>
@@ -94,7 +94,10 @@ export default function Hero() {
                             delay: 0.2 + i * 0.15,
                             ease: [0.2, 0.65, 0.3, 0.9],
                         }}
-                        className="text-5xl font-bold leading-tight tracking-tight text-gray-900 md:text-7xl lg:text-8xl"
+                        className={cn(
+                            "text-5xl font-bold leading-tight tracking-tight md:text-7xl lg:text-8xl",
+                            i === words.length - 1 ? "text-accent" : "text-foreground"
+                        )}
                     >
                         {word}
                     </motion.span>
