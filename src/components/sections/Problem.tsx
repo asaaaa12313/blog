@@ -43,12 +43,9 @@ export default function Problem() {
             >
                 <h2 className="text-3xl font-bold leading-tight text-foreground md:text-5xl">
                     글쓰기 <span className="text-accent">1시간?</span> <br />
-                    <span className="text-neutral-600">사장님에겐 사치입니다.</span>
+                    <span className="text-neutral-800">사장님에겐 사치가 아니라</span><br />
+                    <span className="text-red-500">'가장 비싼 비용'</span>입니다.
                 </h2>
-                <p className="mt-4 text-lg text-neutral-500 md:text-xl">
-                    원고 쓰고 사진 찍고, <br className="md:hidden" />
-                    고르고 꾸미기까지.
-                </p>
             </motion.div>
 
             <div className="relative h-32 w-full max-w-2xl overflow-visible">
@@ -59,7 +56,7 @@ export default function Problem() {
                     className="h-full w-full overflow-visible"
                 >
                     {/* Background guide line */}
-                    <path d={path2} stroke="#333" strokeWidth="1" strokeDasharray="5 5" className="opacity-20" />
+                    <path d={path2} stroke="#ddd" strokeWidth="1" strokeDasharray="5 5" />
 
                     {/* Animating Line */}
                     <motion.path
@@ -74,15 +71,35 @@ export default function Problem() {
 
             <motion.div
                 style={{ opacity: useTransform(scrollYProgress, [0.6, 0.8], [0, 1]) }}
-                className="mt-12 max-w-2xl text-center"
+                className="mt-12 max-w-3xl text-center space-y-8"
             >
-                <p className="mb-4 text-lg font-medium text-neutral-300 md:text-xl">
-                    "열심히 했는데 조회수가 왜 이럴까?"
+                <p className="text-lg leading-relaxed text-neutral-800 md:text-xl">
+                    가게 셔터를 내리고 파김치가 된 몸으로 모니터 앞에 앉는 그 시간.<br className="hidden md:block" />
+                    <strong>깜빡이는 커서는 마치 빚쟁이처럼 글감을 독촉하고</strong>,<br className="hidden md:block" />
+                    흐릿한 사진을 보정하며 새벽 2시를 넘기는 그 순간.<br />
+                    그것은 마케팅이 아니라 <span className="font-bold text-red-600">끝나지 않는 제2의 육체노동</span>입니다.
                 </p>
-                <p className="text-base leading-relaxed text-neutral-500 md:text-lg">
-                    혼자 운영할 때는 변동되는 인기 키워드나<br className="hidden md:block" />
-                    다른 업체가 밀고 있는 키워드를 놓치기 쉽습니다.<br />
-                    <span className="text-red-500">결국 아무리 노력해도 조회수는 0이 됩니다.</span>
+
+                <p className="text-lg leading-relaxed text-neutral-800 md:text-xl">
+                    냉정하게 계산해 보십시오.<br />
+                    가게에서 가장 몸값 비싼 사장님이,<br className="hidden md:block" />
+                    <strong>정작 최저시급도 안 나오는 일에 매달려</strong><br className="hidden md:block" />
+                    내일 쏟아야 할 체력을 가불해 쓰고 계신 겁니다.
+                </p>
+
+                <p className="text-lg leading-relaxed text-neutral-800 md:text-xl">
+                    더 뼈아픈 건,<br />
+                    그렇게 남은 에너지 찌꺼기를 짜내어 쓴 글에는<br className="hidden md:block" />
+                    <strong>사장님의 '지친 기색'이 고스란히 묻어난다는 사실</strong>입니다.<br />
+                    고객은 귀신같이 그 피로감을 감지합니다.<br />
+                    죽어라 노력하고도 아마추어라는 인상을 남기는 비극이 여기서 시작됩니다.
+                </p>
+
+                <p className="text-xl font-bold leading-relaxed text-blue-700 md:text-2xl bg-blue-50 py-4 px-6 rounded-xl inline-block">
+                    이제 퇴근 후의 죄책감은 내려놓으십시오.<br />
+                    숙제 안 한 학생처럼 마음 졸이는 대신,<br />
+                    사장님은 내일의 장사와 온전한 휴식에만 집중하십시오.<br />
+                    그게 남는 장사입니다.
                 </p>
             </motion.div>
         </section>
