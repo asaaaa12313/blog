@@ -150,6 +150,34 @@ export default function Hero() {
             >
                 복잡한 마케팅은 AI에게 맡기고 사장님은 본업에만 집중하세요.
             </motion.p>
+
+            {/* Pricing Emphasis */}
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2, duration: 0.8 }}
+                className="z-10 mt-10"
+            >
+                <div className="group relative">
+                    <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-amber-400 to-orange-400 opacity-40 blur transition duration-500 group-hover:opacity-60" />
+                    <div className="relative flex items-center gap-4 rounded-2xl bg-white/90 px-6 py-4 backdrop-blur-xl transition duration-500 hover:bg-white">
+                        <div className="flex flex-col">
+                            <span className="text-xs font-semibold text-amber-600">Limited Offer</span>
+                            <div className="flex items-baseline gap-1">
+                                <span className="text-2xl font-bold text-slate-900">월 54,000원</span>
+                                <span className="text-xs font-medium text-slate-400">/ VAT 별도</span>
+                            </div>
+                        </div>
+                        <div className="h-10 w-[1px] bg-slate-200" />
+                        <div className="text-left">
+                            <p className="text-sm font-medium text-slate-600">
+                                하루 <span className="font-bold text-amber-600">1,800원</span>으로
+                            </p>
+                            <p className="text-sm text-slate-500">마케팅 자동화 시작하기 ☕️</p>
+                        </div>
+                    </div>
+                </div>
+            </motion.div>
         </section>
     );
 }
