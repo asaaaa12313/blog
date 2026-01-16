@@ -40,23 +40,22 @@ export default function Pricing() {
                 <div className="absolute inset-0 -z-10 h-full w-full animate-spin-slow bg-[conic-gradient(from_0deg,transparent_0deg,_#fbbf24_120deg,transparent_180deg,_#d97706_300deg,transparent_360deg)] opacity-70" />
 
                 <div className="relative flex flex-col items-center justify-center rounded-[2rem] bg-white/90 px-6 py-12 text-center backdrop-blur-xl">
-                    <h3 className="mb-2 text-xl font-medium text-neutral-500">
-                        Premium Plan
-                    </h3>
-
-                    <div className="mb-8 flex items-baseline gap-1 text-foreground">
-                        <span className="text-5xl font-bold tracking-tight">
-                            ₩<NumberTicker value={54000} />
-                        </span>
-                        <span className="text-neutral-500">/월</span>
+                    <div className="mb-8 flex flex-col items-center justify-center text-foreground">
+                        <div className="flex items-baseline gap-1">
+                            <span className="text-5xl font-bold tracking-tight">
+                                ₩<NumberTicker value={54000} />
+                            </span>
+                            <span className="text-neutral-500">/월</span>
+                        </div>
+                        <span className="text-sm text-neutral-400 font-normal mt-1">(VAT 별도)</span>
                     </div>
 
                     <ul className="mb-8 space-y-3 text-left">
                         {[
-                            "매일 자동 블로그 발행",
+                            "자동 블로그 발행",
                             "AI 기반 트렌드 분석",
                             "카카오톡 알림 서비스",
-                            "무제한 키워드 추적",
+                            "스마트 키워드 발굴 및 추천",
                         ].map((feature, i) => (
                             <li key={i} className="flex items-center text-neutral-700">
                                 <svg
