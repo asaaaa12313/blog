@@ -1,7 +1,8 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { MessageCircle } from "lucide-react";
+
+
 
 const REVIEWS = [
     {
@@ -134,7 +135,7 @@ export default function Evidence() {
             </div>
 
             {/* Marquee Container */}
-            <div className="w-full relative overflow-hidden">
+            <div className="w-full relative overflow-hidden h-[540px]">
                 <div className="flex w-full overflow-hidden">
                     {/* Inner - Double the content for smooth loop */}
                     <div className="flex min-w-full shrink-0 animate-marquee gap-8 px-4 items-start">
@@ -158,7 +159,7 @@ function ReviewChatCard({ name, message, reply, highlight, time }: { name: strin
         <div className="w-[400px] shrink-0 flex flex-col rounded-[2rem] bg-white p-6 shadow-sm border border-slate-100 h-[520px] justify-between">
             {/* Header */}
             <div className="flex items-center gap-2 mb-4 text-slate-500">
-                <MessageCircle size={20} />
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" /></svg>
                 <span className="text-sm font-medium">카카오톡 실제 후기</span>
             </div>
 
