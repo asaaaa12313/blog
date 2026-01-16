@@ -1,6 +1,7 @@
 import Hero from "@/components/sections/Hero";
 import Problem from "@/components/sections/Problem";
 import Features from "@/components/sections/Features";
+import FeatureDetails from "@/components/sections/FeatureDetails";
 import Evidence from "@/components/sections/Evidence";
 import Pricing from "@/components/sections/Pricing";
 
@@ -10,6 +11,7 @@ export default function Home() {
       <Hero />
       <Problem />
       <Features />
+      <FeatureDetails />
       <Evidence />
       <Pricing />
     </main>
