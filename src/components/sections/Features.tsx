@@ -24,17 +24,17 @@ function FeatureCard({ title, description, imageSrc, className, delay = 0 }: Fea
                 className
             )}
         >
-            <div className="flex flex-col p-8 z-10 relative">
+            <div className="flex flex-col p-8 z-10 relative shrink-0">
                 <h3 className="mb-3 text-2xl font-bold text-slate-900">{title}</h3>
                 <p className="text-lg text-slate-600 leading-relaxed font-medium">{description}</p>
             </div>
 
-            <div className="relative mt-auto h-64 w-full overflow-hidden bg-slate-50">
+            <div className="relative flex-1 w-full overflow-hidden bg-slate-50">
                 <Image
                     src={imageSrc}
                     alt={title}
                     fill
-                    className="object-contain object-bottom transition-transform duration-500 group-hover:scale-105 p-6"
+                    className="object-contain object-bottom transition-transform duration-500 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, 33vw"
                 />
             </div>
