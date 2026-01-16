@@ -96,7 +96,7 @@ export default function Hero() {
                         }}
                         className={cn(
                             "text-5xl font-bold leading-tight tracking-tight md:text-7xl lg:text-8xl",
-                            i === words.length - 1 ? "text-accent" : "text-foreground"
+                            i === words.length - 1 ? "text-blue-600" : "text-foreground"
                         )}
                     >
                         {word}
