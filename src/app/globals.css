@@ -18,7 +18,7 @@
 
   --animate-spin-slow: spin 4s linear infinite;
   --animate-shimmer: shimmer 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  --animate-marquee: marquee 20s linear infinite;
+  --animate-marquee: marquee 60s linear infinite;
 
   @keyframes shimmer {
     0% {
@@ -36,7 +36,7 @@
     }
 
     to {
-      transform: translateX(calc(-100% - 1rem));
+      transform: translateX(-100%);
     }
   }
 }
