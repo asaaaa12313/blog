@@ -34,6 +34,48 @@ const REVIEWS = [
         time: "오후 8:05",
         avatarColor: "bg-red-200"
     },
+    {
+        name: "강OO 원장님",
+        message: "필라테스 센터 홍보가 고민이었는데, 타겟 고객이 딱 원하는 내용을 써주셔서 문의가 늘었어요.",
+        time: "오전 10:20",
+        avatarColor: "bg-pink-200"
+    },
+    {
+        name: "윤OO 대표님",
+        message: "직원 두고 하기엔 부담스러웠는데, 이 가격에 이런 퀄리티라니... 평생 쓰겠습니다.",
+        time: "오후 1:55",
+        avatarColor: "bg-indigo-200"
+    },
+    {
+        name: "한OO 사장님",
+        message: "카페 신메뉴 홍보글 반응이 바로 오네요? 신기합니다 ㅎㅎ 앞으로도 잘 부탁드려요.",
+        time: "오후 5:30",
+        avatarColor: "bg-orange-200"
+    },
+    {
+        name: "오OO 님",
+        message: "펜션 예약율이 떨어져서 걱정이었는데, 감성적인 글 덕분에 주말 예약 꽉 찼습니다 ㅠㅠ",
+        time: "오후 9:12",
+        avatarColor: "bg-teal-200"
+    },
+    {
+        name: "신OO 대표님",
+        message: "매번 키워드 고민하느라 머리 아팠는데 알아서 잡아주니 너무 편해요. 사업에만 집중할 수 있네요.",
+        time: "오전 11:45",
+        avatarColor: "bg-cyan-200"
+    },
+    {
+        name: "장OO 점주님",
+        message: "배달 앱 리뷰 관리보다 블로그 유입이 훨씬 구매 전환이 좋네요. 진작 할 걸 그랬습니다.",
+        time: "오후 7:20",
+        avatarColor: "bg-lime-200"
+    },
+    {
+        name: "서OO 원장님",
+        message: "학원생 모집 기간이라 바빴는데, 알아서 홍보해주니 상담 전화 받느라 바쁘네요 ㅎㅎ 행복한 비명!",
+        time: "오후 3:40",
+        avatarColor: "bg-fuchsia-200"
+    }
 ];
 
 export default function Evidence() {
