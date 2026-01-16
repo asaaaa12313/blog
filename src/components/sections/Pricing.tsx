@@ -41,6 +41,9 @@ export default function Pricing() {
 
                 <div className="relative flex flex-col items-center justify-center rounded-[2rem] bg-white/90 px-6 py-12 text-center backdrop-blur-xl">
                     <div className="mb-8 flex flex-col items-center justify-center text-foreground">
+                        <p className="mb-4 text-center text-sm font-medium text-amber-600 bg-amber-50 px-4 py-1.5 rounded-full w-fit mx-auto border border-amber-100">
+                            하루 1,800원, 커피 한 잔 값으로<br className="block sm:hidden" /> 귀사의 마케팅을 자동화하세요
+                        </p>
                         <div className="flex items-baseline gap-1">
                             <span className="text-5xl font-bold tracking-tight">
                                 ₩<NumberTicker value={54000} />
