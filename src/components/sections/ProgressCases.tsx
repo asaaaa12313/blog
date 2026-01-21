@@ -8,28 +8,28 @@ import { motion } from "framer-motion";
 const CASES = [
     {
         image: "/images/sample/스크린샷 2026-01-19 오전 9.56.10.png",
-        title: "브랜드 블로그 최적화",
-        desc: "3개월 만에 일 방문자 1,000명 달성",
+        title: "브랜드 블로그 실제 원고",
+        desc: "가독성과 전문성을 모두 갖춘 프리미엄 원고입니다.",
     },
     {
         image: "/images/sample/스크린샷 2026-01-19 오전 9.57.41.png",
-        title: "전문직 마케팅 성공 사례",
-        desc: "신뢰도를 높이는 프리미엄 콘텐츠 기획",
+        title: "전문직 마케팅 원고 예시",
+        desc: "신뢰도를 높이는 깊이 있는 콘텐츠 기획입니다.",
     },
     {
         image: "/images/sample/스크린샷 2026-01-19 오전 10.00.37.png",
-        title: "플레이스 상위 노출",
-        desc: "지역 키워드 장악으로 매출 200% 상승",
+        title: "플레이스 상위노출 원고",
+        desc: "정보 전달과 가독성을 극대화한 원고입니다.",
     },
     {
         image: "/images/sample/스크린샷 2026-01-19 오전 10.11.04.png",
-        title: "대형 학원 원생 모집",
-        desc: "학부모 타겟팅 글쓰기로 상담 문의 폭주",
+        title: "학원/교육업 원고 예시",
+        desc: "학부모님의 신뢰를 얻는 진정성 있는 글쓰기입니다.",
     },
     {
         image: "/images/sample/스크린샷 2026-01-19 오전 10.11.31.png",
-        title: "쇼핑몰 매출 견인",
-        desc: "구매 전환율을 높이는 상세페이지급 포스팅",
+        title: "쇼핑몰/제품 홍보 원고",
+        desc: "구매 전환율을 높이는 상세페이지급 포스팅입니다.",
     },
 ];
 
@@ -63,10 +63,10 @@ export default function ProgressCases() {
                         transition={{ duration: 0.5 }}
                     >
                         <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
-                            진행사례
+                            블로그 실제 원고 사례
                         </h2>
                         <p className="text-slate-600 text-lg max-w-2xl mx-auto">
-                            성공적인 블로그 마케팅 사례를 확인하세요.
+                            업종별 최적화된 고퀄리티 원고를 확인해보세요.
                             <br className="hidden md:block" />
                             압도적인 퀄리티로 차이를 증명합니다.
                         </p>
